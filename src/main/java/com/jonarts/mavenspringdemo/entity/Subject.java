@@ -1,39 +1,51 @@
 package com.jonarts.mavenspringdemo.entity;
 
+
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="subjects")
+@Table(name="subject")
 public class Subject {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Colum
+	@Column(name="id")
 	private int id;
 	
-	private String name;
+	@Column(name="title")
+	private String title;
 	
-	private Course course;
-	
+	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@JoinTable(name="subject_course",
+			joinColumns=@JoinColumn(name="subject_id"),
+			inverseJoinColumns = @JoinColumn(name="course_id")
+			)
+	private List<Course> courses;
+//	
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@JoinColumn(name="teacher_id")
 	private Teacher teacher;
-	
-	private List <Student> student;
-	
+//	
 	
 	public Subject() {
 		
 	}
 	
-	
 
-
-	public Subject(String name) {
-		super();
-		this.name = name;
+	public Subject(String title) {
+		this.title = title;
 	}
 
 
@@ -43,29 +55,28 @@ public class Subject {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
 
-	public String getName() {
-		return name;
+
+
+	public String getTitle() {
+		return title;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-
-	public Course getCourse() {
-		return course;
+	public List<Course> getCourses() {
+		return courses;
 	}
 
-
-	public void setCourse(Course course) {
-		this.course = course;
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 
@@ -73,25 +84,16 @@ public class Subject {
 		return teacher;
 	}
 
-
+	
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
 
 
-	public List<Student> getStudent() {
-		return student;
+	@Override
+	public String toString() {
+		return "Subject [id=" + id + ", title=" + title + ", courses=" + courses + ", teacher=" + teacher + "]";
 	}
-
-
-	public void setStudent(List<Student> student) {
-		this.student = student;
-	}
-	
-	
-	
-	
-	
 	
 
 }
