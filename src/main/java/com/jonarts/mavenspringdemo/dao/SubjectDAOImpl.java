@@ -47,5 +47,17 @@ public class SubjectDAOImpl implements SubjectDAO {
 		
 	}
 
+	@Override
+	public Subject getSubjectById(int subjectId) {
+		
+		//Get current session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//Get the subject object by Id
+		
+		Subject theSubject = currentSession.get(Subject.class, subjectId);
+		return theSubject;
+	}
+
 	
 }

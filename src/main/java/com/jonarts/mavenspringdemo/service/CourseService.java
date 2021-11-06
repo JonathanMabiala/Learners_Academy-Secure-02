@@ -10,4 +10,8 @@ public interface CourseService {
 
 	public void saveCourse(Course theCourse);
 
+	public Course getCourseById(int theId);
+	
+	public int getJoinTableId(int theId);
+
 }

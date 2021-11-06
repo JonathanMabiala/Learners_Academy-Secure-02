@@ -1,5 +1,6 @@
 package com.jonarts.mavenspringdemo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="course")
@@ -40,7 +42,7 @@ public class Course {
 			)
 	private List<Teacher> teachers;
 	
-	@ManyToMany(fetch=FetchType.LAZY,cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	@JoinTable(name="subject_course",
 			joinColumns=@JoinColumn(name="course_id"),
 			inverseJoinColumns = @JoinColumn(name="subject_id")
@@ -48,7 +50,7 @@ public class Course {
 	private List<Subject> subjects;
 	
 	public Course() {
-		
+	
 	}
 	
 	public Course(String title, int hours) {
@@ -91,6 +93,18 @@ public class Course {
 	public List<Teacher> getTeachers() {
 		return teachers;
 	}
+	
+	public Teacher getTeacher(List<Teacher> theTeachers, int id) {
+		Teacher currentTeacher = null;
+		for(Teacher theTeacher : theTeachers ) {
+			if(theTeacher.getId() == id) {
+				currentTeacher = theTeacher;
+				break;
+			}
+		}
+		
+		return currentTeacher;
+	}
 
 	public void setTeachers(List<Teacher> teachers) {
 		this.teachers = teachers;
@@ -104,7 +118,43 @@ public class Course {
 		this.subjects = subjects;
 	}
 
+
+	public void add(Teacher tempTeacher) {
+		
+		if (teachers == null) {
+			
+			teachers = new ArrayList<>();
+		}
+		
+		teachers.add(tempTeacher);
+		
+	}
 	
+	
+	public void addStudent(Student tempStudent) {
+		
+		if (students == null) {
+			
+			students = new ArrayList<>();
+		}
+		
+		students.add(tempStudent);
+		
+	}
+	
+	public void addSubject(Subject tempSubject) {
+		
+		if (subjects == null) {
+			
+			subjects = new ArrayList<>();
+		}
+		
+		subjects.add(tempSubject);
+		
+	}
+	
+
+
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", title=" + title + ", hours=" + hours + ", students=" + students + ", teachers="

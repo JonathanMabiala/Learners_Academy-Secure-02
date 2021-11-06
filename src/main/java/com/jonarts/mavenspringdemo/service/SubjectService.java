@@ -10,4 +10,6 @@ public interface SubjectService {
 
 	public void saveSubject(Subject theSubject);
 
+	public Subject getSubjectById(int subjectId);
+
 }

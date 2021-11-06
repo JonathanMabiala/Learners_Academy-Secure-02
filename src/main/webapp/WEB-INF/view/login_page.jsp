@@ -25,5 +25,14 @@ welcome to Login page
 <br>
 <br>
 <a href="teacher/show_teachers">Show teachers</a>
+<br>
+<br>
+<a href="registration/student_registration">Student Registration</a>
+<br>
+<br>
+<a href="subject/add_subject_to_course">Add Subjects to Course</a>
+<br>
+<br>
+<a href="course/manage">Manage Course</a>
 </body>
 </html>

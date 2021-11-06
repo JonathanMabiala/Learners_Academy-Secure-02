@@ -29,4 +29,17 @@ public class CourseServiceImpl implements CourseService {
 		
 	}
 
+	@Override
+	@Transactional
+	public Course getCourseById(int theId) {
+		
+		return courseDAO.getCourseById(theId);
+	}
+
+	@Override
+	@Transactional
+	public int getJoinTableId(int theId) {
+		return courseDAO.getJoinTableId(theId);
+	}
+
 }

@@ -32,12 +32,16 @@
 					<c:forEach var="courses" items="${courses}">
 					
 						<!-- construct an "update" link with customer id -->
-						<c:url var="updateLink" value="/course/show_form_add">
+						<c:url var="updateLink" value="/course/show_form_for_update">
 							<c:param name = "courseId" value="${courses.id}"/>
 						</c:url>
 						
-						<!-- construct a "Delete" link with customer id -->
+						<!-- construct a "Delete" link with course id -->
 						<c:url var="deleteLink" value="/course/delete">
+							<c:param name = "courseId" value="${courses.id}"/>
+						</c:url>
+						<!-- construct a "Manage" link with course id -->
+						<c:url var="manageLink" value="/course/manage">
 							<c:param name = "courseId" value="${courses.id}"/>
 						</c:url>
 						<tr>
@@ -50,6 +54,9 @@
 								<!-- Display the Delete link-->
 								<a href="${deleteLink}"
 								onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+								|
+									<!-- Display the Manage link-->
+								<a href="${manageLink}">Manage</a>
 							
 							</td>
 						
@@ -58,6 +65,9 @@
 					</c:forEach>
 				</tr>
 			</table>
+			<p>
+			<a href="${pageContext.request.contextPath}/">Back to list</a>
+			</p>
 		</div>
 	</div>
 </body>

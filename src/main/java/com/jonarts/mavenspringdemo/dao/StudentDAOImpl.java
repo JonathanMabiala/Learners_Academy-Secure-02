@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.jonarts.mavenspringdemo.entity.Student;
 
 @Repository
@@ -42,6 +41,20 @@ public class StudentDAOImpl implements StudentDAO {
 		
 		currentSession.saveOrUpdate(theStudent);
 		
+	}
+
+
+	@Override
+	public Student getStudentById(int theId) {
+		
+		//Get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		// now retrieve / read form database using the primary key
+				
+		Student theStudent = currentSession.get(Student.class,theId);
+		
+		return theStudent;
 	}
 
 }

@@ -50,7 +50,7 @@ public class TeacherController {
 	public String saveStudent(@ModelAttribute("tempTeacher") Teacher theTeacher) {
 		
 		// Save the Student object with the Service object
-		
+		System.out.println(theTeacher);
 		teacherService.saveTeacher(theTeacher);
 		
 		return "redirect:/teacher/show_teachers";

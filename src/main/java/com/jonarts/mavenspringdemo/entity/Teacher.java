@@ -33,7 +33,7 @@ public class Teacher {
 	@Column(name="email")
 	private String email;
 	
-	@ManyToMany(fetch=FetchType.LAZY,cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@ManyToMany(fetch=FetchType.EAGER,cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	@JoinTable(name="course_teacher",
 			joinColumns=@JoinColumn(name="teacher_id"),
 			inverseJoinColumns = @JoinColumn(name="course_id")

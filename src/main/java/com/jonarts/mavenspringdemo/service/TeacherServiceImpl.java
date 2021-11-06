@@ -28,4 +28,11 @@ public class TeacherServiceImpl implements TeacherService {
 		
 	}
 
+	@Override
+	@Transactional
+	public Teacher getTeacherById(int id) {
+		
+		return teacherDAO.getTeacherById(id);
+	}
+
 }

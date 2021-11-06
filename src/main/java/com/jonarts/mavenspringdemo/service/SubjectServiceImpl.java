@@ -30,4 +30,11 @@ public class SubjectServiceImpl implements SubjectService {
 		
 	}
 
+	@Override
+	@Transactional
+	public Subject getSubjectById(int subjectId) {
+		// TODO Auto-generated method stub
+		return subjectDAO.getSubjectById(subjectId);
+	}
+
 }

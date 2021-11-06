@@ -1,5 +1,7 @@
 package com.jonarts.mavenspringdemo.entity;
 
+import java.util.ArrayList;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -85,7 +87,14 @@ public class Student {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
-
+	
+	public void addCourse(Course tempCourse) {
+		
+		this.course=tempCourse;
+		
+		
+	}
+	
 
 	@Override
 	public String toString() {
