@@ -9,7 +9,7 @@ public class LoginController {
 	@GetMapping("/show_login_page")
 	public String showMyLoginPage() {
 		
-		return "plain-login";
+		return "login-page";
 	}
 
 }
