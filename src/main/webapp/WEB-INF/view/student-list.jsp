@@ -33,13 +33,13 @@
 					<c:forEach var="students" items="${students}">
 					
 						<!-- construct an "update" link with customer id -->
-						<c:url var="updateLink" value="/course/show_form_add">
+						<c:url var="updateLink" value="/student/update">
 							<c:param name = "studentId" value="${students.id}"/>
 						</c:url>
 						
 						<!-- construct a "Delete" link with customer id -->
-						<c:url var="deleteLink" value="/course/delete">
-							<c:param name = "studnetId" value="${students.id}"/>
+						<c:url var="deleteLink" value="/student/delete">
+							<c:param name = "studentId" value="${students.id}"/>
 						</c:url>
 						<tr>
 							<td>${students.firstName}</td>
@@ -60,6 +60,9 @@
 					</c:forEach>
 				</tr>
 			</table>
+			<p>
+			<a href="${pageContext.request.contextPath}/">Back to list</a>
+		</p>
 		</div>
 	</div>
 </body>

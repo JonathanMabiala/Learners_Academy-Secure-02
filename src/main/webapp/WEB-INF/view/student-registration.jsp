@@ -43,5 +43,9 @@ Course Names:
 
 </form:form>
 
+<br>
+<br>
+<a href="${pageContext.request.contextPath}/">Back to list</a>
+
 </body>
 </html>

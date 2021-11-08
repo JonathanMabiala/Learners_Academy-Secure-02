@@ -38,7 +38,7 @@
 						
 						<!-- construct a "Delete" link with customer id -->
 						<c:url var="deleteLink" value="/subject/delete">
-							<c:param name = "subjectsId" value="${subjects.id}"/>
+							<c:param name = "subjectId" value="${subjects.id}"/>
 						</c:url>
 						<tr>
 							<td>${subjects.title}</td>
@@ -58,6 +58,7 @@
 					</c:forEach>
 				</tr>
 			</table>
+			<a href="${pageContext.request.contextPath}/">Back to list</a>
 		</div>
 	</div>
 </body>

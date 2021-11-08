@@ -44,6 +44,10 @@
 						<c:url var="manageLink" value="/course/manage">
 							<c:param name = "courseId" value="${courses.id}"/>
 						</c:url>
+						<!-- construct a "Report" link with course id -->
+						<c:url var="reportLink" value="/course/report">
+							<c:param name = "courseId" value="${courses.id}"/>
+						</c:url>
 						<tr>
 							<td>${courses.title}</td>
 							<td>${courses.hours}</td>
@@ -53,10 +57,13 @@
 								|
 								<!-- Display the Delete link-->
 								<a href="${deleteLink}"
-								onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+								onclick="if (!(confirm('Are you sure you want to delete this course?'))) return false">Delete</a>
 								|
 									<!-- Display the Manage link-->
 								<a href="${manageLink}">Manage</a>
+								|
+								<!-- Display the Report link-->
+								<a href="${reportLink}">Report</a>
 							
 							</td>
 						

@@ -56,7 +56,9 @@
 	<td><input type="submit" value="submit" /></td>
 </tr>
 </table>
-
+<p>
+<a href="${pageContext.request.contextPath}/">Back to list</a>
+</p>
 
 </form:form>
 

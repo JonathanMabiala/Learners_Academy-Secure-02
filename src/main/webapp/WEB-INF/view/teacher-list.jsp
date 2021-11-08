@@ -33,12 +33,12 @@
 					<c:forEach var="teachers" items="${teachers}">
 					
 						<!-- construct an "update" link with customer id -->
-						<c:url var="updateLink" value="/course/show_form_add">
+						<c:url var="updateLink" value="/teacher/update">
 							<c:param name = "teacherId" value="${teachers.id}"/>
 						</c:url>
 						
 						<!-- construct a "Delete" link with customer id -->
-						<c:url var="deleteLink" value="/course/delete">
+						<c:url var="deleteLink" value="/teacher/delete">
 							<c:param name = "teacherId" value="${teachers.id}"/>
 						</c:url>
 						<tr>
@@ -51,7 +51,7 @@
 								|
 								<!-- Display the Delete link-->
 								<a href="${deleteLink}"
-								onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+								onclick="if (!(confirm('Are you sure you want to delete this teacher?'))) return false">Delete</a>
 							
 							</td>
 						
@@ -60,6 +60,9 @@
 					</c:forEach>
 				</tr>
 			</table>
+			<p>
+			<a href="${pageContext.request.contextPath}/">Back to list</a>
+			</p>
 		</div>
 	</div>
 </body>

@@ -15,20 +15,20 @@
 
 <body>
 
-<form:form action ="manage" modelAttribute="theForm">
+<form:form action ="assign_teacher" modelAttribute="theForm">
 
-<h1>Add Subject to Class</h1>
+<h1>Assign teachers to ${theForm.courseTitle} subjects</h1>
 
-<br><br><%-- 
+<br><br> 
 <table>
 <tr>
 	<td>
-		Subject names:
+		Teacher name:
 	</td>
 	<td>
-		<form:select path="subject">
+		<form:select path="teacher">
 
-		<form:options items = "${theForm.subjectOptions}"/>
+		<form:options items = "${theForm.teacherOptions}"/>
 		
 		</form:select>
 	</td>
@@ -39,11 +39,11 @@
 </tr>
 <tr>
 	<td>
-		Course names:
+		Subject name:
 	</td>
 
 	<td>
-		<form:select path="course">
+		<form:select path="subject">
 		
 		<form:options items = "${theForm.courseSubjectOptions}"/>
 		
@@ -53,10 +53,12 @@
 
 <tr>
 	<td></td>
-	<td><input type="submit" value="submit" /></td>
+	<td><input type="submit" value="Assign" /></td>
 </tr>
 </table>
- --%>
+<p>
+	<a href="${pageContext.request.contextPath}/">Back to list</a>
+</p>
 
 </form:form>
 
