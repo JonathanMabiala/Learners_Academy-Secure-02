@@ -17,12 +17,12 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<h2>Register Courses</h2>
+			<h2>Register Students</h2>
 		</div>
 	</div>
 
 	<div id="container">
-		<h3>Save Course</h3>
+		<h3>add a student</h3>
 		
 		<form:form action="save_student" modelAttribute="tempStudent" method="POST">
 		
@@ -58,7 +58,7 @@
 		</form:form>
 		<div style="clear; both;"></div>
 		<p>
-			<a href="${pageContext.request.contextPath}/student">Back to list</a>
+			<a href="${pageContext.request.contextPath}/student/show_students">Back to list</a>
 		</p>
 	</div>
 

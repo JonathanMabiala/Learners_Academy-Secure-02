@@ -12,10 +12,10 @@
 <title>Insert title here</title>
 <link 	type="text/css" 
 		rel="stylesheet" 
-		href="${pageContext.request.contextPath}/assets/css/style.css" />
+		href="${pageContext.request.contextPath}/css/style.css" />
 <link 	type="text/css" 
 		rel="stylesheet" 
-		href="${pageContext.request.contextPath}/assets/css/add-customer-style.css" />
+		href="${pageContext.request.contextPath}/resources/css/add-customer-style.css" />
 </head>
 <body>
 	<div id="wrapper">

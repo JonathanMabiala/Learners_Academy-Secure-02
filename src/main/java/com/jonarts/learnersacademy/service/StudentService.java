@@ -16,5 +16,7 @@ public interface StudentService {
 
 	public void deleteStudent(int theId);
 
+	public List<Student> getStudentWithNullCourseId();
+
 	
 }

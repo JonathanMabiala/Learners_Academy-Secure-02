@@ -28,7 +28,8 @@ public class StudentRegistrationController {
 	@RequestMapping("/student_registration")
 	public String registerStudentToCourse(Model theModel){
 		
-		List <Student> theStudents = studentService.getStudents();
+	
+		List <Student> theStudents = studentService.getStudentWithNullCourseId();
 		
 		List <Course> theCourses = courseService.getCourses();
 		

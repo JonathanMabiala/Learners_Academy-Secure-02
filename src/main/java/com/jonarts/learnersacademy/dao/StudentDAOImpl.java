@@ -95,4 +95,19 @@ public class StudentDAOImpl implements StudentDAO {
 		
 	}
 
+
+	@Override
+	public List<Student> getStudentWithNullCourseId() {
+		
+		//Get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//Get the student by course id
+		// Make a query
+		Query<Student> theQuery = currentSession.createQuery("FROM Student where course_id IS NULL", Student.class);
+		List <Student> theStudents = theQuery.getResultList();
+		
+		return theStudents;
+	}
+
 }

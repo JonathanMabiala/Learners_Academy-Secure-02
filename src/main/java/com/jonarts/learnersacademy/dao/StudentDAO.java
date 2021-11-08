@@ -15,4 +15,6 @@ public interface StudentDAO {
 	public List<Student> getStudentByCourse(int theId);
 
 	public void deleteStudent(int theId);
+
+	public List<Student> getStudentWithNullCourseId();
 }

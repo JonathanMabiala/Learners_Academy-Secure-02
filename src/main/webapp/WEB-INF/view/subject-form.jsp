@@ -17,7 +17,7 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<h2>Register Subject</h2>
+			<h2>Register a Subject</h2>
 		</div>
 	</div>
 

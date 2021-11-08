@@ -50,6 +50,13 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
+	@Override
+	@Transactional
+	public List<Student> getStudentWithNullCourseId() {
+		
+		return studentDAO.getStudentWithNullCourseId();
+	}
+
 	
 
 }

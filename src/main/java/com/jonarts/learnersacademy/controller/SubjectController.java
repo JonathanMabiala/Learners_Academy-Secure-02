@@ -126,9 +126,16 @@ public class SubjectController {
 		//Get Course by Id
 		Course theCourse = courseService.getCourseById(courseId);
 
-		theCourse.addSubject(theSubject);
+
+		try{
+			theCourse.addSubject(theSubject);
+			
+			courseService.saveCourse(theCourse);
+		}catch(Exception e) {
+			System.out.println("No duplicate values are allowed!!");
+			
+		}
 		
-		courseService.saveCourse(theCourse);
 		
 				
 		

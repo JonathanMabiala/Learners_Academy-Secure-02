@@ -41,7 +41,7 @@
         
         
         <property name="java-output-path" value="/mymavenweb/target/classes"/>
-        <property name="context-root" value="Learners_Academy-secure-02"/>
+        <property name="context-root" value="springmvc5-hibernate5-jsp-mysql-example"/>
                                                     
     
     
